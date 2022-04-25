@@ -19,6 +19,11 @@ public class MarkdownParse {
 	if(openBracket == -1 || closeBracket == -1 || openParen == -1 || closeParen == -1){
                 break;
             }
+	if(markdown.indexOf("!")+1==markdown.indexOf("["))
+	{
+		break;
+	}
+		
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
 	
