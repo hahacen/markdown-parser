@@ -16,22 +16,15 @@ public class MarkdownParse {
             int closeBracket = markdown.indexOf("]", openBracket);
             int openParen = markdown.indexOf("(", closeBracket);
             int closeParen = markdown.indexOf(")", openParen);
-	if(openBracket == -1 || closeBracket == -1 || openParen == -1 || closeParen == -1){
-                break;
-            }
-	if(markdown.indexOf("!")+1==markdown.indexOf("["))
-	{
-		break;
-	}
-	
-	if(!toReturn.contains(markdown.substring(openParen + 1, closeParen)) && (excalmatory +1 != openBracket) && (closeBracket +1 ==openParen)){
-              toReturn.add(markdown.substring(openParen + 1, closeParen));
-	}
+            if (closeParen == -1 || openBracket == -1 
+            || closeBracket == -1 || openParen == -1) break;
+            toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
         }
 
         return toReturn;
     }
+
 
     public static void main(String[] args) throws IOException {
         Path fileName = Path.of(args[0]);
