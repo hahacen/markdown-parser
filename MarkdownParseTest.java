@@ -1,4 +1,7 @@
 import static org.junit.Assert.*;
+
+import java.util.List;
+
 import org.junit.*;
 public class MarkdownParseTest {
     @Test
@@ -6,9 +9,13 @@ public class MarkdownParseTest {
         assertEquals(2, 1 + 1);
     }
     @Test
+
+    
+
     public void getLinks() {
         //first entry will be what we want them to print
         //second entry call the getLinks()
-        assertEquals(List.of("https://something.com","some-thing.html"),getLinks((test-file.md).readtostring));
+        //assertEquals(List.of("https://something.com","some-thing.html"),getLinks(("test-file.md").readtostring));
+
     }
 }
