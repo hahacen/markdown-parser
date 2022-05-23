@@ -25,12 +25,12 @@ public class MarkdownParseTest {
     }
     @Test
     public void testSnippet1() throws IOException{
-        Path fileName=Path.of("Snippe1.md");
+        Path fileName=Path.of("/Users/a/Documents/GitHub/markdown-parser/Snippet1.md");
         String content = Files.readString(fileName);
         ArrayList<String> expected= new ArrayList<>();
         expected.add("another link");
-        
         assertEquals(expected,mark.getLinks(content));
     }
+    
 
 }
