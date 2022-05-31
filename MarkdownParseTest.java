@@ -27,33 +27,29 @@ public class MarkdownParseTest {
     public void testSnippet1() throws IOException{
         Path fileName=Path.of("/Users/a/Documents/GitHub/markdown-parser/Snippet1.md");
         String content = Files.readString(fileName);
-        ArrayList<String> expected= new ArrayList<>();
-        expected.add("another link");
+        List<String> expected= List.of("google.com","google.com", "ucsd.edu");
+        //expected.add("google.com, google.com, ucsd.edu");
         assertEquals(expected,mark.getLinks(content));
-    }
+    }     
 
     @Test
     public void testSnippet2() throws IOException{
         Path fileName=Path.of("/Users/a/Documents/GitHub/markdown-parser/Snippet2.md");
         String content = Files.readString(fileName);
-        ArrayList<String> expected= new ArrayList<>();
-        expected.add("nested link");
-        expected.add("a nested parenthesized url");
-        expected.add("some escaped [ brackets ]");
+        List<String> expected= List.of("a.com","a.com(())", "example.com");
 
         assertEquals(expected,mark.getLinks(content));
 
 }
-
 
 @Test
     public void testSnippet3() throws IOException{
         Path fileName=Path.of("/Users/a/Documents/GitHub/markdown-parser/Snippet3.md");
         String content = Files.readString(fileName);
-        ArrayList<String> expected= new ArrayList<>();
-        expected.add("[this title text is really long and takes up more than one line]");
+        List<String> expected= List.of("https://www.twitter.com"," https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule"," https://cse.ucsd.edu/");
         assertEquals(expected,mark.getLinks(content));
 
 }
+
 
 }
