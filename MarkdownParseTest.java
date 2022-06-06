@@ -28,7 +28,6 @@ public class MarkdownParseTest {
         Path fileName=Path.of("/Users/a/Documents/GitHub/markdown-parser/Snippet1.md");
         String content = Files.readString(fileName);
         List<String> expected= List.of("google.com","google.com", "ucsd.edu");
-        //expected.add("google.com, google.com, ucsd.edu");
         assertEquals(expected,mark.getLinks(content));
     }     
 
