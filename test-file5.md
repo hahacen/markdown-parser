@@ -1,6 +1,6 @@
 # title
 
-[stuff]
+![stuff](page.com)
 
 paragraph
 
